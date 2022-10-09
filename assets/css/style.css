@@ -10,7 +10,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 .card {
@@ -100,7 +99,8 @@ body {
 
 @media screen and (max-width: 768px) {
     body {
-        overflow: hidden;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
     }
     .card {
         overflow: hidden;
