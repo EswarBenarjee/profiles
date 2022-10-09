@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.card {
+    display: block;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    height: 120%;
+    display: flex;
+    justify-content: center;
+    border: 0;
+    transition: 0.5s;
+}
+
+.card .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card .circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(108,190,139,1) 0%, rgba(19,23,135,1) 25%);
+    clip-path: circle(100px at center);
+    transition: 0.5s;
+}
+
+.card .circle:hover::before, .card:hover .circle::before {
+    background: rgba(19,23,135,1);
+    clip-path: circle(400px at center);
+}
+
+.card img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 110%;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.card:hover img {
+    top: 55%;
+    left: 72%;
+    height: 120%;
+} 
+
+.card .content {
+    color: #fff;
+    position: relative;
+    width: 50%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+}
+.card:hover .content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.card .content .social {
+    margin-top: 50px;
+}
+.card .content .social a {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: rgba(19,23,135,1);
+}
+
+@media screen and (max-width: 992px) {
+    .card {
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+    .card {
+        overflow: hidden;
+    }
+    .card:hover {
+        height: 500px;
+    }
+
+    .card .content {
+        width: 100%;
+        left: 0;
+        padding: 40px;
+    }
+    .card:hover img {
+        top: 80%;
+        left: 50%;
+        height: 300px;
+    }
+    
+    .card .content .social a {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
