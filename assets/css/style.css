@@ -79,6 +79,8 @@ body {
 }
 
 .card .content .social {
+    position: relative;
+    top: 1000px;
     margin-top: 50px;
 }
 .card .content .social a {
@@ -87,6 +89,11 @@ body {
     border-radius: 8px;
     font-weight: bold;
     color: rgba(19,23,135,1);
+}
+
+.card:hover .content .social {
+    top: 0;
+    transition: 0.5s;
 }
 
 @media screen and (max-width: 992px) {
